@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem "jekyll", "~> 4.2.0"
+gem "jekyll"
 gem "jekyll-theme-minimal"
 gem "jekyll-theme-cayman"
 gem 'jekyll-sass-converter', '~> 2.2.0'
