@@ -1,10 +1,4 @@
-markdown: Kramdown
-theme: jekyll-theme-cayman
 title: Shin-ichiro's homepage
 description: Bookmark this to keep an eye on my project updates!
-permalink: /blog/:year/:month/:day/:title
-sass:
-  style: compressed
-log_level: info
-plugins:
-  - jekyll-feed
+theme: jekyll-theme-cayman
+markdown: kramdown
