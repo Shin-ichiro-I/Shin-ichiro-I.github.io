@@ -6,3 +6,5 @@ permalink: /blog/:year/:month/:day/:title
 sass:
   style: compressed
 log_level: info
+plugins:
+  - jekyll-feed
