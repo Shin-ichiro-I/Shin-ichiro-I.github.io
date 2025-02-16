@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 5.0"
+gem "jekyll", "~> 4.x"
 gem "jekyll-theme-cayman"
 # gem 'jekyll-sass-converter', '~> 2.2.0'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
