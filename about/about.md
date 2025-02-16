@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "about me"
-permalink: /about/
+permalink: /about
 date: 2025-02-14
 ---
 
