@@ -8,3 +8,4 @@ gem 'csv'
 gem 'base64'
 gem 'bigdecimal'
 gem 'jekyll-feed'
+gem "github-pages", group: :jekyll_plugins
