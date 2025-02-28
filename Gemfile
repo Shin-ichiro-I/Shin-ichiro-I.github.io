@@ -9,3 +9,7 @@ gem 'base64'
 gem 'bigdecimal'
 gem 'jekyll-feed'
 gem "github-pages", group: :jekyll_plugins
+
+gem 'jekyll-paginate'
+gem 'kramdown'
+gem 'pygments.rb'
