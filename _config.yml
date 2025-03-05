@@ -1,14 +1,13 @@
 # Setup
-title:  Shin-ichiro's homepage
-description:  Bookmark this to keep an eye on my project updates!
+title:  The Quest fot Critical Path
 baseurl:   ""
 paginate:  1
 local:  "ja"
 
 # About/contact
-author:  Shin-ichiro-I
-name:  
-url:  
+author:  
+name:  Char
+url:  https://shin-ichiro-i.github.io/
 
 # Gems
 gems:
