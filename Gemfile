@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gemspec
+# gemspec
 
 # gem "jekyll", "~> 4.x"
 # gem "jekyll-theme-cayman"
@@ -11,6 +11,11 @@ gemspec
 # gem 'jekyll-feed'
 #gem "github-pages", group: :jekyll_plugins
 
+gem "jekyll"
 gem 'jekyll-paginate'
-gem 'kramdown'
-gem 'pygments.rb'
+gem "support-for"
+gem "http_parser"
+gem "webrick", "~> 1.7"
+
+# gem 'kramdown'
+# gem 'pygments.rb'
