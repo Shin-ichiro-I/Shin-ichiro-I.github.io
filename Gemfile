@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+# source "https://rubygems.org"
 # gemspec
 
 # gem "jekyll", "~> 4.x"
@@ -11,11 +11,23 @@ source "https://rubygems.org"
 # gem 'jekyll-feed'
 #gem "github-pages", group: :jekyll_plugins
 
+# gem "jekyll"
+# gem 'jekyll-paginate'
+# gem "support-for"
+# gem "http_parser"
+# gem "webrick", "~> 1.7"
+
+# gem 'kramdown'
+# gem 'pygments.rb'
+
+source 'https://rubygems.org'
+
 gem "jekyll"
-gem 'jekyll-paginate'
+gem "jekyll-paginate"
 gem "support-for"
 gem "http_parser"
 gem "webrick", "~> 1.7"
 
-# gem 'kramdown'
-# gem 'pygments.rb'
+gem 'eventmachine', '~> 1.2.5'
+# gem 'thin'
+# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
