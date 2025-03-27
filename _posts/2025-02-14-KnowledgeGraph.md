@@ -5,7 +5,7 @@ date: 2025-02-14
 ---
 
 <div align="center">
-<img src="/assets/img/20250214_KG/KnowledgeGraph_pagetop.gif" width="100%" alt="MS_SSO">
+<img src="/assets/img/20250214_KG/KnowledgeGraph_pagetop.gif" width="80%" alt="MS_SSO">
 </div>
 
 化学企業で働く人たちの中には、話題の生成AIを業務で使ってみたけど**精度が今一つ**、と思っている人は多いのではないでしょうか。
@@ -94,7 +94,7 @@ KG作成の大まかな手順は、以下の通りです。
 やはり、本命は、**Wikidata**などの既存の辞書やデータベースを活用する方法だと思います。**Wikidata**という単語を初めて聞いたという人のために補足すると、**Wikipedia**のデータ版が**Wikidata**になります。**Wikipedia**には、用語の上位・下位の関係性などの情報も付随しており、オントロジーと言えるようなデータソースです。PythonやSPARQLといったプログラミング言語を使って、**Wikipedia**から所望のデータをダウンロードすることができるため、自身が望む形でベースKGを作成することができます。
 
    <div align="center">
-   <img src="assets/img/20250214_KG/wikidata_top.gif" width="80%" alt="MS_SSO">
+   <img src="/assets/img/20250214_KG/wikidata_top.gif" width="80%" alt="MS_SSO">
    <p><em>Wikidataのトップ画面</em></p>
    </div>
 
