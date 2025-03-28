@@ -23,8 +23,8 @@ navigation:
       url: /index.html
     - title: About
       url: /about
-    - title: Contact
-      url: /contact
+    # - title: Contact
+    #   url: /contact
 
 social:
     # github: brianmaierjr

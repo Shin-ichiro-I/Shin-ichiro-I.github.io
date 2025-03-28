@@ -1,14 +1,14 @@
 ---
 layout: default
-title: About Long Haul
+title: About After School Science
 ---
 
 <div class="post">
-	<h1 class="pageTitle">About Long Haul</h1>
-	<img src="{{ '/assets/img/AdobeStock_494668734_Preview.jpeg' | relative_url }}" alt="">
-	<p class="intro">Long Haul is a minimal, long form <a href="http://jekyllrb.com">Jekyll</a> Theme. It can be used as is or customized to your hearts desire.</p>
-	<p>Long Haul was created in honor of all the hard working touring bicycles that have traversed the globe time and time again. Take it for a spin.</p>
-	<h2>Features</h2>
+	<h1 class="pageTitle">著者紹介 & ブログ内容</h1>
+	<img src="{{ '/assets/img/school_BG.png' | relative_url }}" alt="">
+	<p class="intro">AIと秘密計算をコアとするディープテック系のスタートアップに在籍中。前職で20年以上勤めた大手化学企業での「R&D」や「DX」の経験を活かし、化学企業向けのプロダクト開発にまい進中。博士（理学）</p>
+	<p>	『放課後のサイエンス』では、Materials InformaticsやDXの解説、材料開発、サイエンス全般などの時事ネタの感想を書いていきます。</p>
+	<!-- <h2>Features</h2>
 	<ul>
 		<li>Built with the <a href="https://github.com/jekyll/jekyll-sass-converter">Jekyll SASS convertor</a> plugin</li>
   		<li>SVG Social Icons from <a href="http://customizr.net/icons/">Customizr</a></li>
@@ -20,5 +20,5 @@ title: About Long Haul
       <li>Estimated Reading Time for posts</li>
   		<li><a href="https://github.com/adobe-webplatform/dropcap.js">Drop Cap</a> on posts</li>
   		<li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A Better Type Scale</a></li>
-  	</ul>
+  	</ul> -->
 </div>
