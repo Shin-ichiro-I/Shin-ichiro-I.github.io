@@ -4,7 +4,7 @@ title: About After School Science
 ---
 
 <div class="post">
-	<h1 class="pageTitle">著者紹介 & ブログ内容</h1>
+	<h2 class="pageTitle">著者紹介 & ブログ内容</h2>
 	<div align="center">
 	<img src="{{ '/assets/img/selfy.png' | relative_url }}" width="20%" alt="">
 	</div>
