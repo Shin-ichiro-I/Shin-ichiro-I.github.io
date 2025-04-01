@@ -39,3 +39,6 @@ google_analytics: "G-DGWQ6JZGY4"
 
 disqus:
     shortname: Shin
+
+plugins:
+- jekyll-sitemap
