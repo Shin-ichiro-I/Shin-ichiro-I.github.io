@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "化学分野のKnowledge Graph作ってみた１"
-date: 2025-04-01
+title: "化学分野のKnowledge Graph作ってみた2"
+date: 2025-04-11
 ---
 
 <div align="center">
