@@ -134,7 +134,7 @@ SELECT ?item WHERE {
 
 ```
 SELECT (COUNT(?item) AS ?count) WHERE {
-?item wdt:P31 wd:Q81163 .  
+?item wdt:P279/wdt:P279* wd:Q81163 .  
 }
 ```
 

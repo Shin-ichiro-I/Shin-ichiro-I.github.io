@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem "jekyll"
+gem "jekyll", "~> 4.4.1"
 gem "jekyll-paginate"
+gem "jekyll-sitemap"
 gem "support-for"
 gem "http_parser"
 gem "webrick", "~> 1.7"

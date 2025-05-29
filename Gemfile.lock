@@ -44,6 +44,8 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.10.2)
@@ -92,8 +94,9 @@ PLATFORMS
 DEPENDENCIES
   eventmachine (~> 1.2.5)
   http_parser
-  jekyll
+  jekyll (~> 4.4.1)
   jekyll-paginate
+  jekyll-sitemap
   support-for
   thin
   wdm (>= 0.1.0)
