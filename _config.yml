@@ -4,7 +4,7 @@ description: MI、Science, Chemical Industry, Martial Arts, etc.
 url: https://shin-ichiro-i.github.io/
 # Only necessary when hosting your site in a sub-directory. Project sites hosted on GitHub Pages are the common use-case of this variable.
 baseurl: "" # Ex: /project-page
-paginate_path: "blog/page:num/"
+paginate_path: "page:num/"
 permalink: blog/:title/
 
 # Header Option
@@ -15,7 +15,11 @@ sass:
 
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate]
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
 paginate: 5
 
 navigation:
@@ -39,6 +43,3 @@ google_analytics: "G-DGWQ6JZGY4"
 
 disqus:
     shortname: Shin
-
-plugins:
-- jekyll-sitemap
