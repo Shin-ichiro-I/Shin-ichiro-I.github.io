@@ -6,6 +6,7 @@ table {
 	width: 100%;
 	margin-bottom: 1.5em;
 	border-collapse: collapse;
+	table-layout: fixed;
 
 	caption {
 		margin: 0 0 7px;
@@ -19,18 +20,20 @@ table {
 tr {
 
 	&:nth-child(even) {
-		background-color: lighten($grey, 30%);
-
-		@media (prefers-color-scheme: dark) {
-			background-color: lighten(black, 10%);
-		}
+		background-color: #eeeeee;
 	}
 }
 
-td,
-th {
+th, td {
 	text-align: left;
 	padding: .5em;
+	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: clamp(0.7em, 1vw, 1em);
+	max-width: 120px;
+	position: relative;
 }
 
 th {
@@ -40,4 +43,11 @@ th {
 	&:last-child {
 		border-right: 0;
 	}
+}
+
+th:hover, td:hover {
+	white-space: normal;
+	overflow: visible;
+	background: #a0a0a0;
+	z-index: 10;
 }

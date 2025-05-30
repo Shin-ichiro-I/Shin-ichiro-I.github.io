@@ -33,3 +33,138 @@
 }
 
 // If IE support is needed you can add them here or create another stylesheet for specific IE fixes
+
+// =============================
+// rouge-github.css のスタイルを上書きするためのコードブロックの色の調整
+// =============================
+pre.highlight .o { color: #f92672; } /* Operator */
+pre.highlight .ow { color: #f92672; } /* Operator Word */
+pre.highlight .k { color: #66d9ef; } /* Keyword */
+pre.highlight .nf { color: #FFB86C; } /* Function Name */
+pre.highlight .nt { color: #f92672; } /* Tag (if used for specific keywords) */
+pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; } /* Comments (ensure visibility) */
+
+// =============================
+// レイアウト調整: 本文・コード・画像・表の最大幅を統一
+// =============================
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background: #fff;
+  color: #222;
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+pre, .highlight, img, table {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+// インラインコードのスタイル（ライトテーマ）
+code {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 0.95em;
+  padding: 0.2em 0.4em;
+  background-color: #f3f4f6;
+  color: #222;
+  border-radius: 3px;
+  display: inline;
+  margin: 0;
+}
+
+// ブロックコードのスタイル（ライトテーマ）
+pre, .highlight {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0;
+}
+pre code {
+  display: block;
+  padding: 1em;
+  background-color: #23272e;
+  color: #f8f8f2;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+// =============================
+// GitHub風Rougeシンタックスハイライト (Dark Theme - Revised)
+// =============================
+.highlight .hll { background-color: #49483e }
+.highlight .c { color: #a0a0a0; font-style: italic }
+.highlight .err { color: #f92672; background-color: #1e0010 }
+.highlight .k { color: #66d9ef; font-weight: bold }
+.highlight .o { color: #f92672; font-weight: bold }
+.highlight .cm { color: #a0a0a0; font-style: italic }
+.highlight .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
+.highlight .c1 { color: #a0a0a0; font-style: italic }
+.highlight .cs { color: #a0a0a0; font-weight: bold; font-style: italic }
+.highlight .gd { color: #f92672; background-color: #1e0010 }
+.highlight .ge { color: #f8f8f2; font-style: italic }
+.highlight .gr { color: #f92672 }
+.highlight .gh { color: #f8f8f2; font-weight: bold }
+.highlight .gi { color: #a6e22e; background-color: #1e0010 }
+.highlight .go { color: #d0d0d0 }
+.highlight .gp { color: #d0d0d0; font-weight: bold }
+.highlight .gs { font-weight: bold; color: #f8f8f2; }
+.highlight .gu { color: #d0d0d0 }
+.highlight .gt { color: #f92672 }
+.highlight .kc { color: #66d9ef; font-weight: bold }
+.highlight .kd { color: #66d9ef; font-weight: bold }
+.highlight .kn { color: #f92672; font-weight: bold }
+.highlight .kp { color: #66d9ef; font-weight: bold }
+.highlight .kr { color: #66d9ef; font-weight: bold }
+.highlight .kt { color: #66d9ef; font-weight: bold }
+.highlight .m { color: #ae81ff }
+.highlight .s { color: #e6db74 }
+.highlight .na { color: #a6e22e }
+.highlight .nb { color: #f8f8f2 }
+.highlight .nc { color: #a6e22e; font-weight: bold }
+.highlight .no { color: #f92672 }
+.highlight .nd { color: #a6e22e; font-weight: bold }
+.highlight .ni { color: #f8f8f2; font-weight: bold }
+.highlight .ne { color: #f92672; font-weight: bold }
+.highlight .nf { color: #a6e22e; font-weight: bold }
+.highlight .nl { color: #f8f8f2; font-weight: bold }
+.highlight .nn { color: #f8f8f2 }
+.highlight .nt { color: #f92672 }
+.highlight .nv { color: #f8f8f2 }
+.highlight .ow { color: #f92672; font-weight: bold }
+.highlight .w { color: #f8f8f2 }
+.highlight .mf { color: #ae81ff }
+.highlight .mh { color: #ae81ff }
+.highlight .mi { color: #ae81ff }
+.highlight .mo { color: #ae81ff }
+.highlight .sb { color: #e6db74 }
+.highlight .sc { color: #e6db74 }
+.highlight .sd { color: #e6db74 }
+.highlight .s2 { color: #e6db74 }
+.highlight .se { color: #ae81ff }
+.highlight .sh { color: #e6db74 }
+.highlight .si { color: #e6db74 }
+.highlight .sx { color: #e6db74 }
+.highlight .sr { color: #a6e22e }
+.highlight .s1 { color: #e6db74 }
+.highlight .ss { color: #ae81ff }
+.highlight .bp { color: #f8f8f2 }
+.highlight .vc { color: #f8f8f2 }
+.highlight .vg { color: #f8f8f2 }
+.highlight .vi { color: #f8f8f2 }
+.highlight .il { color: #ae81ff }
+
+// 本文以外の背景
+body {
+  background: #f4f6fa;
+}

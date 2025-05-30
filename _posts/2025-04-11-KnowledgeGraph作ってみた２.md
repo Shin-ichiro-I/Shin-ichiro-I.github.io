@@ -74,7 +74,7 @@ Wikidataには、SPARQLクエリを実行できる`Wikidata Query Service`とい
 
 [Wikidata Query Service]( https://query.wikidata.org/)にアクセスし、次のクエリを実行してみてください。
 
-```
+```sparql
 SELECT (COUNT(?item) AS ?count) WHERE {
     ?item wdt:P31 wd:Q178593 .
 }
@@ -86,7 +86,7 @@ SELECT (COUNT(?item) AS ?count) WHERE {
 
 次に、高分子に分類される２つのアイテムが何であるかを確認してみましょう。次のクエリを実行します。
 
-```
+```sparql
 SELECT ?item WHERE {
     ?item wdt:P31 wd:Q178593 .
 }
@@ -100,7 +100,7 @@ SELECT ?item WHERE {
 
 別の例として、高分子の下位概念であるビニルポリマー（Q1812439）を検索してみましょう。次のクエリを実行します。
 
-```
+```sparql
 SELECT ?item WHERE {
     ?item wdt:P31 wd:Q1812439 .
 }
@@ -132,9 +132,9 @@ SELECT ?item WHERE {
 
 まず、`重合体(Q81163)`に分類されるアイテム数を調べます。
 
-```
+```sparql
 SELECT (COUNT(?item) AS ?count) WHERE {
-?item wdt:P279/wdt:P279* wd:Q81163 .  
+?item wdt:P279/wdt:P279* wd:Q81163.  # polymer
 }
 ```
 
@@ -142,9 +142,9 @@ SELECT (COUNT(?item) AS ?count) WHERE {
 
 次に、再帰的な検索を試します。
 
-```
+```sparql
 SELECT (COUNT(?item) AS ?count) WHERE {
-?item wdt:P279/wdt:P279* wd:Q81163 .  
+?item wdt:P279/wdt:P279* wd:Q81163.  # 高分子
 }
 ```
 
@@ -164,14 +164,13 @@ SELECT (COUNT(?item) AS ?count) WHERE {
 
 1. SPARQLクエリでアイテムのリストを取得する関数
 
-```
+```python
 def get_item_list(offset, limit=100):
 
     query = f"""
-    SELECT?item WHERE {{
+    SELECT?item WHERE {
     ?item wdt:P279/wdt:P279* wd:Q81163.  # polymer
-    }}
-    """
+    }
     url = 'https://query.wikidata.org/sparql'
     headers = {
         'User-Agent': 'your_pjt/1.0 (xxxxx@xxxxx.co.jp)' # メールアドレスの入力がないとタイムアウトが発生します
@@ -188,8 +187,7 @@ def get_item_list(offset, limit=100):
 
 2. Wikidata APIを使用して、アイテムIDの詳細データを抽出する関数
 
-
-```
+```python
 def get_item_data(item_ids):
     url = 'https://www.wikidata.org/w/api.php'
     params = {
@@ -206,7 +204,7 @@ def get_item_data(item_ids):
 
 3. 抽出したデータをファイルに出力する処理
 
-```
+```python
 # extracted data item
 'http://www.wikidata.org/entity/' + item_id,
 data['labels'].get('ja', {}).get('value'),
@@ -229,7 +227,7 @@ df = pd.DataFrame(all_data, columns=[
 
 上記の例では、基本的な処理のみを説明しました。実際には、エラー処理やログ出力、分割処理などの機能も必要になります。以下に、それらの機能を含むコード全体の構成を示します。
 
-```
+```python
 import requests
 import pandas as pd
 from time import sleep, time
@@ -247,9 +245,9 @@ logging.basicConfig(filename='wikidata_download_polymer_restrict.log', level=log
 def get_item_list(offset, limit=100, retries=3):
 
     query = f"""
-    SELECT?item WHERE {{
+    SELECT?item WHERE {
     ?item wdt:P279/wdt:P279* wd:Q81163.  # 高分子
-    }}
+    }
     ORDER BY?item
     LIMIT {limit}
     OFFSET {offset}
@@ -279,7 +277,7 @@ def get_item_list(offset, limit=100, retries=3):
 また、接続エラーが起こった場合の再接続処理も実装しています。引数`retries=3`で、再接続の試行回数を指定します。再接続時には、`sleep(2 ** attempt)`の処理により、エラー回数に応じて再接続までの待機時間が長くなります。
 
 
-```
+```python
 # Wikidata API でアイテムの詳細情報を取得
 def get_item_data(item_ids, retries=3):
     url = 'https://www.wikidata.org/w/api.php'
@@ -308,7 +306,7 @@ def get_item_data(item_ids, retries=3):
 
 この関数でも、接続エラーが発生した場合の再接続処理を実装しています。
 
-```
+```python
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Wikidataから高分子データをダウンロードし、CSVファイルに保存する')
     parser.add_argument('start_index', type=int, help='開始位置')
@@ -403,7 +401,7 @@ if __name__ == '__main__':
 `sleep(0.15)`の部分は、リクエスト間の時間間隔を設定する項目になります。Wikidataは1秒間に10回以下のリクエスト回数となるよう求められているとのことなので、その規定より少しだけ緩めの0.15秒の時間間隔としました。ただし、wikidataのサーバー負荷を考えると、もう少し長めに設定した方がよかったのかもしれません。お時間に余裕がある方は、ぜひ長め(1秒くらい)に設定してください。
 
 上記pythonコードの実行文は以下です。
-```
+```python
 poetry run python main_restrict.py {start_index} {stop_index}
 poetry run python main_restrict.py 1 20001
 ```

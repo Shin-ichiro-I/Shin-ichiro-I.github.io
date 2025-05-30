@@ -88,26 +88,26 @@ Python環境の準備に不安を感じる方は、生成AIに質問してみて
 
 まず、pyenvをインストールし、python-3.7.4をインストールします。
 
-```
+```python
 pyenv install 3.7.4
 ```
 
 次に、今回のKnowledge Graph専用の仮想環境を作成します。
 
-```
+```python
 python3.7 -m venv venv
 ```
 
 作成した仮想環境を有効化します。
 
-```
+```python
 venv\Scripts\activate # windows
 source venv/bin/activate # Mac, Linux
 ```
 
 最後に、必要なパッケージをインストールします。
 
-```
+```python
 pip install pandas==1.3.5 requests==2.31.0
 ```
 

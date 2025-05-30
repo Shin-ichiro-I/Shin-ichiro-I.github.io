@@ -29,14 +29,14 @@ date: 2025-04-23
 
 先ずは、見出し語として、日本語と英語が対になった化学用語を100語程度準備しました。その見出し語に対して、含まれていてほしい類義語を書き出します。いくつかの例を示します。
 
-| 見出し語 | Head word | Synonym 1 | Synonym 2 | Synonym 3 | Synonym 4 | Synonym 5 |
-| ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| メタノール | methanol | CH₃OH | メチルアルコール | methyl alcohol | MeOH |  |
-| エタノール | ethanol | C₂H₅OH | エチルアルコール | ethyl alcohol | EtOH |  |
-| ヒドロキシ基 | hydroxy | -OH | 水酸基 | アルコール基 |  |  |
-| カルボキシ基 | corboxy | -COOH | カルボン酸基 |  |  |  |
-| 蒸留 | distillation | distill. | distill |  |  |  |
-| 抽出 | extraction | ext. |  |  |  |  |
+| 見出し語 | Head word | Synonym 1 | Synonym 2 | Synonym 3 | Synonym 4 |
+| ------- | ------- | ------- | ------- | ------- | ------- |
+| メタノール | methanol | CH₃OH | メチルアルコール | methyl alcohol | MeOH |
+| エタノール | ethanol | C₂H₅OH | エチルアルコール | ethyl alcohol | EtOH |
+| ヒドロキシ基 | hydroxy | -OH | 水酸基 | アルコール基 |  |
+| カルボキシ基 | corboxy | -COOH | カルボン酸基 |  |  |
+| 蒸留 | distillation | distill. | distill |  |  |
+| 抽出 | extraction | ext. |  |  |  |
 
 作成したKnowledge Graphにリスト中の単語がどの程度含まれているかを調査します。
 
@@ -46,7 +46,7 @@ date: 2025-04-23
 
 **文字コードの修正**：　Unicodeの亜付き／上付き文字が存在すると、検索が意図した通りに実施できないことがあります。そこで、これらをNFKC正規化を行いました。サンプルコードは以下です。
 
-```
+```python
 def normalize_text(text):
     """文字列からUnicodeの亜付き文字と上付き文字を削除し、NFKC正規化を行う"""
     if isinstance(text, str):
@@ -58,7 +58,7 @@ def normalize_text(text):
 
 **見出し語有無の確認**：　検証用リストの見出し語／Head wordを位置ぎょうずづ抜き出し、Wikidataから抽出したCSVに含まれるかチェックします。以下にサンプルコードを示します。
 
-```
+```python
 # 3. CSVファイルの各行について処理
 for index, row in df_test.iterrows():
     term_ja = normalize_text(row["見出し語"])  # 正規化
@@ -88,7 +88,7 @@ for index, row in df_test.iterrows():
 
 **見出し語有りの時、類義語有無の確認**：　ここでも、検証用CSVのSynonymを一行ずつ読み込み、`knowledge_graph`に該当する単語が含まれているかチェックします。サンプルコードは以下の通りです。
 
-```
+```python
     # 3-2. 存在する場合、"aliases_ja"または"aliases_en"に表記ゆれが含まれるか確認
     variation_terms = [
         "表記ゆれ1", "表記ゆれ2", "表記ゆれ3",
@@ -135,7 +135,7 @@ for index, row in df_test.iterrows():
 
 <br>
 
-## 検証結果 <a id="result></a>
+## 検証結果 <a id="results"></a>
 
 先ずは、原子、分子を調べた結果を示します。
 

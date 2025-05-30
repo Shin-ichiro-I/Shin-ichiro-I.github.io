@@ -3,7 +3,7 @@ GLOBAL STYLES
 ***************/
 
 body {
-	font-size: 125%;
+	font-size: 112.5%;
 }
 
 .content {
@@ -13,7 +13,7 @@ body {
 
 	&:after {
 		z-index: -1;
-		background: white;
+		background: #f4f6fa;
 		content: "";
 		display: block;
 		width: 100%;
@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-	max-width: 880px;
+	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
@@ -69,43 +69,43 @@ HEADER STYLING
 		transform: translateY(-50%);
 		max-width: 800px;
 		overflow: hidden;
-	}
 
-	h1 {
-		font-size: 3em;
-		line-height: 1;
-		letter-spacing: -3px;
-		padding-left: 0;
-	}
+		h1 {
+			font-size: 3em;
+			line-height: 1;
+			letter-spacing: -3px;
+			padding-left: 0;
+		}
 
-	nav {
-		float: left;
-		clear: left;
+		nav {
+			float: left;
+			clear: left;
+			padding: 0 1em;
 
-		ul {
-			margin: 0;
+			ul {
+				margin: 0;
 
-			li {
-				display: inline;
-				line-height: 3em;
-				background: none;
-				padding: 0 5px;
-				border: none;
+				li {
+					display: inline;
+					line-height: 3em;
+					background: none;
+					padding: 0 5px;
+					border: none;
 
-				a {
-					color: white;
-					font-size: .9em;
-					text-decoration: none;
-					padding: 0 .25em;
+					a {
+						color: white;
+						text-decoration: none;
+						padding: 0 .25em;
 
-					&:hover {
-						color: darken(white, 20%);
+						&:hover {
+							color: darken(white, 15%);
+						}
 					}
-				}
 
-				&.current {
-					padding-bottom: .25em;
-					border-bottom: 4px solid rgba(255, 255, 255, .4);
+					&.current {
+						padding-bottom: .25em;
+						border-bottom: 4px solid white;
+					}
 				}
 			}
 		}
@@ -166,7 +166,7 @@ POST STYLING
 	ol,
 	dl,
 	.pageTitle {
-		width: 75%;
+		width: 100%;
 		float: none;
 		margin: 0 auto 2rem;
 	}
@@ -282,7 +282,6 @@ DARK THEME STYLING
 		color: white;
 	}
 
-	.content:after,
 	.post .featuredImage:before {
 		background: black;
 	}
