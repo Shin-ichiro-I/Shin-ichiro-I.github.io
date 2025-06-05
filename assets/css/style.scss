@@ -62,14 +62,30 @@ pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { colo
 .content {
   width: 100%;
   box-sizing: border-box;
-  font-size: 1rem; /* 本文フォントサイズを調整 */
-  line-height: 1.8; /* 行間を調整 */
+  font-size: 1.125rem; /* 本文フォントサイズを18px相当に調整 */
+  line-height: 1.8; /* 行間を1.8に設定 */
 }
 
 // ポスト記事タイトルのスタイル調整（h1を想定）
 h1 {
-  font-size: 1.8rem; /* タイトルフォントサイズを調整 */
+  font-size: 2rem; /* タイトルフォントサイズを32px相当に調整 */
   margin-bottom: 1.5rem; /* タイトルの下余白 */
+}
+
+// 見出しのサイズ調整
+h2 {
+  font-size: 1.5rem; /* 24px相当 */
+  margin: 2rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px相当 */
+  margin: 1.5rem 0 1rem;
+}
+
+h4 {
+  font-size: 1.125rem; /* 18px相当 */
+  margin: 1.25rem 0 0.75rem;
 }
 
 pre, .highlight, img, table {
@@ -91,7 +107,7 @@ hr {
 // インラインコードのスタイル（ライトテーマ）
 code {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  font-size: 0.95em;
+  font-size: 0.9em; /* インラインコードのサイズを本文より少し小さく */
   padding: 0.2em 0.4em;
   background-color: #f3f4f6;
   color: #222;
@@ -115,6 +131,8 @@ pre code {
   border-radius: 6px;
   overflow-x: auto;
   margin: 0;
+  font-size: 0.9em; /* ブロックコードのサイズも調整 */
+  line-height: 1.6; /* コードブロックの行間を少し狭く */
 }
 
 // =============================
