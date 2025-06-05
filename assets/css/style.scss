@@ -2,11 +2,11 @@
 ---
 
 // Reset using Normalize
-@import "normalize";
+// @import "normalize"; // Removed due to missing file
 
 // Import fonts from Google
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800); // Commented out for testing
+// @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic); // Commented out for testing
 
 // Site configuration
 @import "config";
@@ -21,17 +21,19 @@
 @import "modules/tables";
 @import "modules/syntax";
 
-// Mobile up base styles
-@import "breakpoints/mobileup";
+// Mobile up base styles - Moved to later
+// @import "breakpoints/mobileup";
 
 // Import media queries add more as you desire
+// Mobile up base styles - Re-added here
+@import "breakpoints/mobileup";
+
 @media only screen and (min-width: 800px) {
 	@import "breakpoints/800up";
 }
 @media only screen and (min-width: 1200px) {
 	@import "breakpoints/1200up";
 }
-
 // If IE support is needed you can add them here or create another stylesheet for specific IE fixes
 
 // =============================
@@ -60,14 +62,30 @@ pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { colo
 .content {
   width: 100%;
   box-sizing: border-box;
+  font-size: 1rem; /* 本文フォントサイズを調整 */
+  line-height: 1.8; /* 行間を調整 */
+}
+
+// ポスト記事タイトルのスタイル調整（h1を想定）
+h1 {
+  font-size: 1.8rem; /* タイトルフォントサイズを調整 */
+  margin-bottom: 1.5rem; /* タイトルの下余白 */
 }
 
 pre, .highlight, img, table {
   max-width: 100%;
-  width: 100%;
+  width: 80%; /* 画像の幅を調整 */
   box-sizing: border-box;
   display: block;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto; /* 中央寄せにする */
+}
+
+// セクション区切りの横線（hrタグ）のスタイルを追加または確認
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc; /* 横線の色 */
+  margin: 2em 0; /* 上下の余白 */
 }
 
 // インラインコードのスタイル（ライトテーマ）
@@ -168,3 +186,164 @@ pre code {
 body {
   background: #f4f6fa;
 }
+
+// =============================
+// モバイル表示用のスタイル調整 (画面幅768px以下)
+// =============================
+@media only screen and (max-width: 768px) {
+
+  // 画像サイズ調整
+  pre, .highlight, img, table {
+    width: 100%; /* モバイルでは幅を100%にする */
+    margin: 1.5rem 0; /* 中央寄せを解除 */
+  }
+
+  // メニューボタンの位置調整（CSSのみで試みる）
+  // 既存のメニューボタンのクラス名や構造が不明なため、一般的なヘッダー内のメニューボタンを想定
+  // サイトのヘッダー構造に応じて適宜修正が必要です。
+  header .menu-button {
+    position: absolute;
+    top: 10px; /* 上からの位置 */
+    right: 10px; /* 右からの位置 */
+  }
+
+}
+
+/* 目次サイドバーのスタイル */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative; /* 子要素の絶対配置の基準とする */
+}
+
+.toc-sidebar {
+  width: 200px; /* サイドバーの幅 */
+  position: fixed; /* ここをfixedに変更します */
+  left: 20px; /* 画面左端からの距離を調整（必要に応じて変更） */
+  top: 320px; /* 画面上部からの距離 */
+  height: calc(50vh - 40px); /* 画面の高さに合わせた高さ */
+  overflow-y: auto; /* 目次が多い場合にスクロール可能にする */
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: #f0f0f0; /* 配置確認用に背景色をつけると便利です */
+}
+
+/* 記事コンテンツのスタイル */
+article.post {
+  margin-left: 0; /* 本文の左マージンをなくす */
+  width: 800px; /* 記事コンテンツの最大幅（必要に応じて調整） */
+  max-width: 100%; /* 親要素（content-wrapper）の幅を超えないように */
+  padding: 0 20px; /* 左右にパディングを追加して、内容が端に寄りすぎないようにする */
+}
+
+
+.toc-sidebar h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.toc-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc-sidebar li {
+  margin-bottom: 5px;
+}
+
+.toc-sidebar a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 3px 0;
+}
+
+.toc-sidebar a:hover {
+  color: #007bff;
+}
+
+/* ヘッダーのスタイル調整（ブログタイトルとナビゲーションの位置修正） */
+.header {
+  position: relative;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.header .container {
+  display: block; /* flexboxを解除してブロック要素として扱う */
+  text-align: center;
+}
+
+.header h1 { /* ブログタイトルのスタイル */
+  margin: 0 0 1em 0; /* 下マージンを追加してナビゲーションとの間隔を確保 */
+  font-size: 2em;
+}
+
+.header .site-nav { /* ナビゲーションのスタイル */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header .site-nav .page-link {
+  display: inline-block;
+  margin: 0 1em;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* モバイル表示時のスタイル */
+@media (max-width: 768px) {
+  .toc-sidebar {
+    display: none;
+    position: static;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    left: auto;
+  }
+
+  article.post {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  /* モバイル時のヘッダー調整 */
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 1.5em;
+    margin: 0; /* マージンをリセット */
+  }
+
+  .header .site-nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header .site-nav .page-link {
+    margin: 0 0.5em;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
