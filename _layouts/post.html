@@ -2,17 +2,7 @@
 layout: default
 ---
 
-<div class="content-wrapper">
-
-  <aside class="toc-sidebar">
-    <h3>目次</h3>
-    <ul>
-      <li>項目1</li>
-      <li>項目2</li>
-      <li>項目3</li>
-    </ul>
-  </aside>
-
+<div class="post-layout">
   <article class="post">
     {%- if page.image -%}
       <div class="featuredImage">
@@ -23,7 +13,16 @@ layout: default
       <h1 class="postTitle">{{ page.title }}</h1>
       <p class="meta">{{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
     </header>
-    
+
+    <!-- モバイル用目次（記事内埋め込み） -->
+    <nav class="toc-mobile" aria-label="目次">
+      <button class="toc-mobile-toggle" aria-expanded="false">
+        <span class="toc-mobile-title">目次</span>
+        <span class="toc-mobile-icon"></span>
+      </button>
+      <ul class="toc-mobile-list"></ul>
+    </nav>
+
     {{ content }}
 
     <!-- POST NAVIGATION -->
@@ -45,6 +44,15 @@ layout: default
     </footer>
   </article>
 
+  <!-- PC用目次（右サイドバー） -->
+  <aside class="toc-sidebar" aria-label="目次">
+    <div class="toc-sidebar-inner">
+      <h3 class="toc-sidebar-title">目次</h3>
+      <nav class="toc-nav">
+        <ul class="toc-list"></ul>
+      </nav>
+    </div>
+  </aside>
 </div>
 
 {%- if site.disqus.shortname -%}

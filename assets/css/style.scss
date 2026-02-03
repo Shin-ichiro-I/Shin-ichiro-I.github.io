@@ -1,57 +1,61 @@
 ---
 ---
 
-// Reset using Normalize
-// @import "normalize"; // Removed due to missing file
-
-// Import fonts from Google
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800); // Commented out for testing
-// @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic); // Commented out for testing
-
-// Site configuration
+// =============================================================================
+// Imports
+// =============================================================================
 @import "config";
-
-// Import Partials
 @import "partials/typography";
 @import "partials/mixins";
-
-// Modules
 @import "modules/buttons";
 @import "modules/forms";
 @import "modules/tables";
 @import "modules/syntax";
-
-// Mobile up base styles - Moved to later
-// @import "breakpoints/mobileup";
-
-// Import media queries add more as you desire
-// Mobile up base styles - Re-added here
 @import "breakpoints/mobileup";
 
 @media only screen and (min-width: 800px) {
-	@import "breakpoints/800up";
+  @import "breakpoints/800up";
 }
 @media only screen and (min-width: 1200px) {
-	@import "breakpoints/1200up";
+  @import "breakpoints/1200up";
 }
-// If IE support is needed you can add them here or create another stylesheet for specific IE fixes
 
-// =============================
-// rouge-github.css のスタイルを上書きするためのコードブロックの色の調整
-// =============================
-pre.highlight .o { color: #f92672; } /* Operator */
-pre.highlight .ow { color: #f92672; } /* Operator Word */
-pre.highlight .k { color: #66d9ef; } /* Keyword */
-pre.highlight .nf { color: #FFB86C; } /* Function Name */
-pre.highlight .nt { color: #f92672; } /* Tag (if used for specific keywords) */
-pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; } /* Comments (ensure visibility) */
+// =============================================================================
+// Variables - レイアウト設定
+// =============================================================================
+$bp-mobile: 767px;
+$bp-tablet: 768px;
+$bp-tablet-max: 1023px;
+$bp-desktop-sm: 1024px;
+$bp-desktop-sm-max: 1199px;
+$bp-desktop: 1200px;
+$bp-desktop-lg: 1400px;
+$bp-desktop-xl: 1600px;
 
-// =============================
-// レイアウト調整: 本文・コード・画像・表の最大幅を統一
-// =============================
+// コンテナ幅
+$container-width-default: 900px;
+$container-width-lg: 1000px;
+$container-width-xl: 1100px;
+
+// 目次の位置
+$toc-top-default: 160px;
+$toc-top-xl: 240px;
+
+// 目次の幅
+$toc-width-default: 220px;
+$toc-width-lg: 260px;
+$toc-width-xl: 280px;
+
+// =============================================================================
+// Base Styles
+// =============================================================================
+body {
+  background: #f4f6fa;
+}
 
 .container {
-  max-width: 800px;
+  max-width: $container-width-default;
+  width: 90%;
   margin: 0 auto;
   padding: 1.5rem;
   box-sizing: border-box;
@@ -62,52 +66,55 @@ pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { colo
 .content {
   width: 100%;
   box-sizing: border-box;
-  font-size: 1.125rem; /* 本文フォントサイズを18px相当に調整 */
-  line-height: 1.8; /* 行間を1.8に設定 */
+  font-size: 1.125rem;
+  line-height: 1.8;
 }
 
-// ポスト記事タイトルのスタイル調整（h1を想定）
+// =============================================================================
+// Typography
+// =============================================================================
 h1 {
-  font-size: 2rem; /* タイトルフォントサイズを32px相当に調整 */
-  margin-bottom: 1.5rem; /* タイトルの下余白 */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-// 見出しのサイズ調整
 h2 {
-  font-size: 1.5rem; /* 24px相当 */
+  font-size: 1.5rem;
   margin: 2rem 0 1rem;
 }
 
 h3 {
-  font-size: 1.25rem; /* 20px相当 */
+  font-size: 1.25rem;
   margin: 1.5rem 0 1rem;
 }
 
 h4 {
-  font-size: 1.125rem; /* 18px相当 */
+  font-size: 1.125rem;
   margin: 1.25rem 0 0.75rem;
 }
 
-pre, .highlight, img, table {
-  max-width: 100%;
-  width: 80%; /* 画像の幅を調整 */
-  box-sizing: border-box;
-  display: block;
-  margin: 1.5rem auto; /* 中央寄せにする */
-}
-
-// セクション区切りの横線（hrタグ）のスタイルを追加または確認
 hr {
   border: 0;
   height: 1px;
-  background: #ccc; /* 横線の色 */
-  margin: 2em 0; /* 上下の余白 */
+  background: #ccc;
+  margin: 2em 0;
 }
 
-// インラインコードのスタイル（ライトテーマ）
+// =============================================================================
+// Media Elements (images, tables, code blocks)
+// =============================================================================
+pre, .highlight, img, table {
+  max-width: 100%;
+  width: 80%;
+  box-sizing: border-box;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+// インラインコード
 code {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  font-size: 0.9em; /* インラインコードのサイズを本文より少し小さく */
+  font-size: 0.9em;
   padding: 0.2em 0.4em;
   background-color: #f3f4f6;
   color: #222;
@@ -116,13 +123,14 @@ code {
   margin: 0;
 }
 
-// ブロックコードのスタイル（ライトテーマ）
+// ブロックコード
 pre, .highlight {
   background: none !important;
   box-shadow: none !important;
   padding: 0 !important;
   margin: 1.5rem 0;
 }
+
 pre code {
   display: block;
   padding: 1em;
@@ -131,237 +139,440 @@ pre code {
   border-radius: 6px;
   overflow-x: auto;
   margin: 0;
-  font-size: 0.9em; /* ブロックコードのサイズも調整 */
-  line-height: 1.6; /* コードブロックの行間を少し狭く */
+  font-size: 0.9em;
+  line-height: 1.6;
 }
 
-// =============================
-// GitHub風Rougeシンタックスハイライト (Dark Theme - Revised)
-// =============================
-.highlight .hll { background-color: #49483e }
-.highlight .c { color: #a0a0a0; font-style: italic }
-.highlight .err { color: #f92672; background-color: #1e0010 }
-.highlight .k { color: #66d9ef; font-weight: bold }
-.highlight .o { color: #f92672; font-weight: bold }
-.highlight .cm { color: #a0a0a0; font-style: italic }
-.highlight .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
-.highlight .c1 { color: #a0a0a0; font-style: italic }
-.highlight .cs { color: #a0a0a0; font-weight: bold; font-style: italic }
-.highlight .gd { color: #f92672; background-color: #1e0010 }
-.highlight .ge { color: #f8f8f2; font-style: italic }
-.highlight .gr { color: #f92672 }
-.highlight .gh { color: #f8f8f2; font-weight: bold }
-.highlight .gi { color: #a6e22e; background-color: #1e0010 }
-.highlight .go { color: #d0d0d0 }
-.highlight .gp { color: #d0d0d0; font-weight: bold }
-.highlight .gs { font-weight: bold; color: #f8f8f2; }
-.highlight .gu { color: #d0d0d0 }
-.highlight .gt { color: #f92672 }
-.highlight .kc { color: #66d9ef; font-weight: bold }
-.highlight .kd { color: #66d9ef; font-weight: bold }
-.highlight .kn { color: #f92672; font-weight: bold }
-.highlight .kp { color: #66d9ef; font-weight: bold }
-.highlight .kr { color: #66d9ef; font-weight: bold }
-.highlight .kt { color: #66d9ef; font-weight: bold }
-.highlight .m { color: #ae81ff }
-.highlight .s { color: #e6db74 }
-.highlight .na { color: #a6e22e }
-.highlight .nb { color: #f8f8f2 }
-.highlight .nc { color: #a6e22e; font-weight: bold }
-.highlight .no { color: #f92672 }
-.highlight .nd { color: #a6e22e; font-weight: bold }
-.highlight .ni { color: #f8f8f2; font-weight: bold }
-.highlight .ne { color: #f92672; font-weight: bold }
-.highlight .nf { color: #a6e22e; font-weight: bold }
-.highlight .nl { color: #f8f8f2; font-weight: bold }
-.highlight .nn { color: #f8f8f2 }
-.highlight .nt { color: #f92672 }
-.highlight .nv { color: #f8f8f2 }
-.highlight .ow { color: #f92672; font-weight: bold }
-.highlight .w { color: #f8f8f2 }
-.highlight .mf { color: #ae81ff }
-.highlight .mh { color: #ae81ff }
-.highlight .mi { color: #ae81ff }
-.highlight .mo { color: #ae81ff }
-.highlight .sb { color: #e6db74 }
-.highlight .sc { color: #e6db74 }
-.highlight .sd { color: #e6db74 }
-.highlight .s2 { color: #e6db74 }
-.highlight .se { color: #ae81ff }
-.highlight .sh { color: #e6db74 }
-.highlight .si { color: #e6db74 }
-.highlight .sx { color: #e6db74 }
-.highlight .sr { color: #a6e22e }
-.highlight .s1 { color: #e6db74 }
-.highlight .ss { color: #ae81ff }
-.highlight .bp { color: #f8f8f2 }
-.highlight .vc { color: #f8f8f2 }
-.highlight .vg { color: #f8f8f2 }
-.highlight .vi { color: #f8f8f2 }
-.highlight .il { color: #ae81ff }
+// =============================================================================
+// Syntax Highlighting (Monokai Dark Theme)
+// =============================================================================
+pre.highlight .o { color: #f92672; }
+pre.highlight .ow { color: #f92672; }
+pre.highlight .k { color: #66d9ef; }
+pre.highlight .nf { color: #FFB86C; }
+pre.highlight .nt { color: #f92672; }
+pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; }
 
-// 本文以外の背景
-body {
-  background: #f4f6fa;
+.highlight {
+  .hll { background-color: #49483e }
+  .c { color: #a0a0a0; font-style: italic }
+  .err { color: #f92672; background-color: #1e0010 }
+  .k { color: #66d9ef; font-weight: bold }
+  .o { color: #f92672; font-weight: bold }
+  .cm { color: #a0a0a0; font-style: italic }
+  .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
+  .c1 { color: #a0a0a0; font-style: italic }
+  .cs { color: #a0a0a0; font-weight: bold; font-style: italic }
+  .gd { color: #f92672; background-color: #1e0010 }
+  .ge { color: #f8f8f2; font-style: italic }
+  .gr { color: #f92672 }
+  .gh { color: #f8f8f2; font-weight: bold }
+  .gi { color: #a6e22e; background-color: #1e0010 }
+  .go { color: #d0d0d0 }
+  .gp { color: #d0d0d0; font-weight: bold }
+  .gs { font-weight: bold; color: #f8f8f2; }
+  .gu { color: #d0d0d0 }
+  .gt { color: #f92672 }
+  .kc, .kd, .kp, .kr, .kt { color: #66d9ef; font-weight: bold }
+  .kn { color: #f92672; font-weight: bold }
+  .m, .mf, .mh, .mi, .mo, .il { color: #ae81ff }
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #e6db74 }
+  .na { color: #a6e22e }
+  .nb, .ni, .nl, .nn, .nv, .bp, .vc, .vg, .vi, .w { color: #f8f8f2 }
+  .nc, .nd, .nf { color: #a6e22e; font-weight: bold }
+  .no, .ne, .nt { color: #f92672 }
+  .ne { font-weight: bold }
+  .sr { color: #a6e22e }
+  .ss { color: #ae81ff }
 }
 
-// =============================
-// モバイル表示用のスタイル調整 (画面幅768px以下)
-// =============================
-@media only screen and (max-width: 768px) {
-
-  // 画像サイズ調整
-  pre, .highlight, img, table {
-    width: 100%; /* モバイルでは幅を100%にする */
-    margin: 1.5rem 0; /* 中央寄せを解除 */
-  }
-
-  // メニューボタンの位置調整（CSSのみで試みる）
-  // 既存のメニューボタンのクラス名や構造が不明なため、一般的なヘッダー内のメニューボタンを想定
-  // サイトのヘッダー構造に応じて適宜修正が必要です。
-  header .menu-button {
-    position: absolute;
-    top: 10px; /* 上からの位置 */
-    right: 10px; /* 右からの位置 */
-  }
-
-}
-
-/* 目次サイドバーのスタイル */
-.content-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: relative; /* 子要素の絶対配置の基準とする */
-}
-
-.toc-sidebar {
-  width: 200px; /* サイドバーの幅 */
-  position: fixed; /* ここをfixedに変更します */
-  left: 20px; /* 画面左端からの距離を調整（必要に応じて変更） */
-  top: 320px; /* 画面上部からの距離 */
-  height: calc(50vh - 40px); /* 画面の高さに合わせた高さ */
-  overflow-y: auto; /* 目次が多い場合にスクロール可能にする */
-  flex-shrink: 0;
-  padding: 10px;
-  background-color: #f0f0f0; /* 配置確認用に背景色をつけると便利です */
-}
-
-/* 記事コンテンツのスタイル */
-article.post {
-  margin-left: 0; /* 本文の左マージンをなくす */
-  width: 800px; /* 記事コンテンツの最大幅（必要に応じて調整） */
-  max-width: 100%; /* 親要素（content-wrapper）の幅を超えないように */
-  padding: 0 20px; /* 左右にパディングを追加して、内容が端に寄りすぎないようにする */
-}
-
-
-.toc-sidebar h3 {
-  margin-top: 0;
-  font-size: 1.2em;
-}
-
-.toc-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.toc-sidebar li {
-  margin-bottom: 5px;
-}
-
-.toc-sidebar a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 3px 0;
-}
-
-.toc-sidebar a:hover {
-  color: #007bff;
-}
-
-/* ヘッダーのスタイル調整（ブログタイトルとナビゲーションの位置修正） */
+// =============================================================================
+// Header
+// =============================================================================
 .header {
   position: relative;
   text-align: center;
   padding: 1em 0;
+
+  .container {
+    display: block;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 1em 0;
+    font-size: 2em;
+  }
+
+  .site-nav {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    .page-link {
+      display: inline-block;
+      margin: 0 1em;
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
 }
 
-.header .container {
-  display: block; /* flexboxを解除してブロック要素として扱う */
-  text-align: center;
-}
-
-.header h1 { /* ブログタイトルのスタイル */
-  margin: 0 0 1em 0; /* 下マージンを追加してナビゲーションとの間隔を確保 */
-  font-size: 2em;
-}
-
-.header .site-nav { /* ナビゲーションのスタイル */
-  margin: 0;
+// =============================================================================
+// Post Layout
+// =============================================================================
+.post-layout {
+  display: block;
+  max-width: $container-width-default;
+  width: 90%;
+  margin: 0 auto;
   padding: 0;
-  text-align: center;
+  position: relative;
 }
 
-.header .site-nav .page-link {
-  display: inline-block;
-  margin: 0 1em;
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+article.post {
+  max-width: 100%;
+  padding: 0 20px;
+  background: #fff;
 }
 
-/* モバイル表示時のスタイル */
-@media (max-width: 768px) {
-  .toc-sidebar {
-    display: none;
-    position: static;
-    width: auto;
-    height: auto;
-    margin-right: 0;
-    left: auto;
-  }
+// =============================================================================
+// TOC Sidebar (PC)
+// =============================================================================
+.toc-sidebar {
+  display: none;
+}
 
-  article.post {
-    margin-left: 0;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 10px;
-  }
+.toc-sidebar-inner {
+  position: fixed;
+  top: $toc-top-default;
+  right: 20px;
+  width: 240px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid seagreen;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
-  .content-wrapper {
-    flex-direction: column;
-  }
+.toc-sidebar-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-  /* モバイル時のヘッダー調整 */
-  .header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.toc-nav {
+  font-size: 0.85rem;
+}
 
-  .header h1 {
-    font-size: 1.5em;
-    margin: 0; /* マージンをリセット */
-  }
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-  .header .site-nav {
+  li {
     margin: 0;
     padding: 0;
   }
 
-  .header .site-nav .page-link {
-    margin: 0 0.5em;
-    &:first-child {
-      margin-left: 0;
+  a {
+    display: block;
+    padding: 0.4rem 0.5rem;
+    color: #555;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+
+    &:hover {
+      color: seagreen;
+      background: rgba(46, 139, 87, 0.1);
     }
-    &:last-child {
-      margin-right: 0;
+
+    &.active {
+      color: seagreen;
+      background: rgba(46, 139, 87, 0.15);
+      font-weight: 600;
+      border-left: 2px solid seagreen;
+      margin-left: -2px;
+    }
+  }
+
+  li[data-level="3"] a {
+    padding-left: 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  li[data-level="4"] a {
+    padding-left: 2rem;
+    font-size: 0.75rem;
+    color: #777;
+  }
+}
+
+// =============================================================================
+// TOC Mobile
+// =============================================================================
+.toc-mobile {
+  display: none;
+  margin: 1.5rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.toc-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+
+  &[aria-expanded="true"] + .toc-mobile-list {
+    max-height: 500px;
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+.toc-mobile-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    background: #555;
+    transition: transform 0.3s ease;
+  }
+
+  &::before {
+    width: 12px;
+    height: 2px;
+    top: 9px;
+    left: 4px;
+  }
+
+  &::after {
+    width: 2px;
+    height: 12px;
+    top: 4px;
+    left: 9px;
+  }
+}
+
+.toc-mobile-toggle[aria-expanded="true"] .toc-mobile-icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.toc-mobile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  li { margin: 0; }
+
+  a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: rgba(46, 139, 87, 0.1);
+      color: seagreen;
+    }
+  }
+
+  li:last-child a { border-bottom: none; }
+
+  li[data-level="3"] a {
+    padding-left: 1.75rem;
+    font-size: 0.85rem;
+  }
+
+  li[data-level="4"] a {
+    padding-left: 2.5rem;
+    font-size: 0.8rem;
+    color: #777;
+  }
+}
+
+// =============================================================================
+// Responsive - Mobile (767px以下)
+// =============================================================================
+@media (max-width: $bp-mobile) {
+  pre, .highlight, img, table {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  header .menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .post-layout {
+    width: 100%;
+    padding: 0;
+  }
+
+  .toc-sidebar { display: none; }
+  .toc-mobile { display: block; }
+
+  article.post {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .site-nav {
+      margin: 0;
+      padding: 0;
+
+      .page-link {
+        margin: 0 0.5em;
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+      }
     }
   }
 }
 
+// =============================================================================
+// Responsive - Tablet (768px - 1023px)
+// =============================================================================
+@media (min-width: $bp-tablet) and (max-width: $bp-tablet-max) {
+  .post-layout { max-width: 90%; }
+  .toc-sidebar { display: none; }
+  .toc-mobile { display: block; }
+}
+
+// =============================================================================
+// Responsive - Desktop Small (1024px - 1199px)
+// =============================================================================
+@media (min-width: $bp-desktop-sm) and (max-width: $bp-desktop-sm-max) {
+  .post-layout {
+    display: flex;
+    max-width: 95%;
+    gap: 1.5rem;
+  }
+
+  article.post {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .toc-sidebar {
+    display: block;
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+  }
+
+  .toc-sidebar-inner {
+    position: sticky;
+    top: 80px;
+    right: auto;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+// =============================================================================
+// Responsive - Desktop (1200px以上)
+// =============================================================================
+@media (min-width: $bp-desktop) {
+  .container { max-width: $container-width-lg; }
+
+  .posts article {
+    h3 { font-size: 1.5rem; }
+    p { font-size: 1.1rem; line-height: 1.8; }
+    .date { font-size: 0.95rem; }
+  }
+
+  .post-layout { max-width: $container-width-default; }
+
+  .toc-sidebar {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+  }
+
+  .toc-sidebar-inner {
+    width: $toc-width-default;
+    right: calc((100vw - #{$container-width-default}) / 2 - 260px);
+  }
+}
+
+// =============================================================================
+// Responsive - Desktop Large (1400px以上)
+// =============================================================================
+@media (min-width: $bp-desktop-lg) {
+  .container { max-width: $container-width-xl; }
+
+  .posts article {
+    h3 { font-size: 1.6rem; }
+    p { font-size: 1.15rem; }
+  }
+
+  .post-layout { max-width: $container-width-lg; }
+
+  .toc-sidebar-inner {
+    width: $toc-width-lg;
+    right: calc((100vw - #{$container-width-lg}) / 2 - 300px);
+  }
+}
+
+// =============================================================================
+// Responsive - Desktop XL (1600px以上)
+// =============================================================================
+@media (min-width: $bp-desktop-xl) {
+  .post-layout { max-width: $container-width-xl; }
+
+  .toc-sidebar-inner {
+    width: $toc-width-xl;
+    right: calc((100vw - #{$container-width-xl}) / 2 - 320px);
+    top: $toc-top-xl;
+    max-height: calc(100vh - 280px);
+  }
+}
