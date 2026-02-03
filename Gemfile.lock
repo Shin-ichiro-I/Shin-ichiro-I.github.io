@@ -13,8 +13,12 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    ffi (1.17.1)
     ffi (1.17.1-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
+    google-protobuf (4.30.2)
+      bigdecimal
+      rake (>= 13)
     google-protobuf (4.30.2-x64-mingw-ucrt)
       bigdecimal
       rake (>= 13)
@@ -71,6 +75,8 @@ GEM
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
+    sass-embedded (1.86.0)
+      google-protobuf (~> 4.30)
     sass-embedded (1.86.0-x64-mingw-ucrt)
       google-protobuf (~> 4.30)
     sass-listen (4.0.0)
@@ -89,6 +95,8 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  ruby
+  x86_64-linux
   x64-mingw-ucrt
 
 DEPENDENCIES
