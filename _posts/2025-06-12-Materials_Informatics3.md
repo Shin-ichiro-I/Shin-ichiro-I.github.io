@@ -2,6 +2,12 @@
 layout: post
 title: "実務家がMaterials Informaticsに期待すること「第2章：シミュレーションとの使い分け」"
 date: 2025-06-12
+category: materials-informatics
+tags: [Materials Informatics, シミュレーション, 材料開発]
+series: mi-expectations
+series_title: "実務家がMIに期待すること"
+series_order: 3
+description: "MIとシミュレーションの特徴を比較し、使い分けを解説。"
 ---
 
 ---

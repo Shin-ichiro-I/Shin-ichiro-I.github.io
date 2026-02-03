@@ -2,6 +2,12 @@
 layout: post
 title: "化学分野のKnowledge Graph作ってみた2"
 date: 2025-04-11
+category: knowledge-graph
+tags: [Knowledge Graph, 化学, Python, SPARQL, 実践]
+series: kg-practice
+series_title: "化学分野のKG作ってみた"
+series_order: 2
+description: "Knowledge Graph作成の実践シリーズ第2回。SPARQLとテストコードを解説。"
 ---
 
 <div align="center">

@@ -2,6 +2,12 @@
 layout: post
 title: "実務家がMaterials Informaticsに期待すること「第3章：MIで「つなぐ」ということ」"
 date: 2025-09-04
+category: materials-informatics
+tags: [Materials Informatics, 統合, 材料開発]
+series: mi-expectations
+series_title: "実務家がMIに期待すること"
+series_order: 4
+description: "MIの「つなぐ」機能による開発プロセス効率化を解説。"
 ---
 
 ---

@@ -2,6 +2,9 @@
 layout: post
 title: "化学分野のKnowledge Graphを作る"
 date: 2025-02-14
+category: knowledge-graph
+tags: [Knowledge Graph, 化学, 入門]
+description: "化学企業で働く方々向けにKnowledge Graphの概要と活用方法を解説します。"
 ---
 
 <div align="center">

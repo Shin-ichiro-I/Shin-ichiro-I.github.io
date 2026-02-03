@@ -2,6 +2,12 @@
 layout: post
 title: "実務家がMaterials Informaticsに期待すること「第4章：現状の技術的制約」"
 date: 2025-09-08
+category: materials-informatics
+tags: [Materials Informatics, 技術的課題, 材料開発]
+series: mi-expectations
+series_title: "実務家がMIに期待すること"
+series_order: 5
+description: "MIが直面する技術的・組織的な制約について考察。"
 ---
 
 ---

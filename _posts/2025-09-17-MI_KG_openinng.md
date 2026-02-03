@@ -2,6 +2,12 @@
 layout: post
 title: "Knowledge GraphとMaterials Informaticsの融合が拓く新時代:プロローグ"
 date: 2025-09-17
+category: materials-informatics
+tags: [Materials Informatics, Knowledge Graph, 融合, 材料開発]
+series: mi-kg-fusion
+series_title: "MI×KG融合が拓く新時代"
+series_order: 1
+description: "MIとKnowledge Graphの融合が次の時代を拓く可能性を探る序章。"
 ---
 
 ---

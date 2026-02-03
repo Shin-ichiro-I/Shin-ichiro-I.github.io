@@ -2,6 +2,9 @@
 layout: post
 title: "LLM-FeynmanがMaterials Informatics最大の課題を解決してしまったのか？"
 date: 2025-03-28
+category: materials-informatics
+tags: [LLM, Materials Informatics, 論文紹介]
+description: "LLMが物理法則を発見する可能性を示した論文について考察します。"
 ---
 
 <div align="center">

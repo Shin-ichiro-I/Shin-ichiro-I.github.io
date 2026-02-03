@@ -2,6 +2,12 @@
 layout: post
 title: "化学分野のKnowledge Graph作ってみた１"
 date: 2025-04-01
+category: knowledge-graph
+tags: [Knowledge Graph, 化学, Python, Wikidata, 実践]
+series: kg-practice
+series_title: "化学分野のKG作ってみた"
+series_order: 1
+description: "Knowledge Graph作成の実践シリーズ第1回。全体像と環境準備を解説。"
 ---
 
 <div align="center">

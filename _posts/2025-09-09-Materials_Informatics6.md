@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "実務家がMaterials Informaticsに期待すること「第5章：実務での活用戦略」"
-date: 2025-09-08
+date: 2025-09-09
+category: materials-informatics
+tags: [Materials Informatics, 活用戦略, 材料開発]
+series: mi-expectations
+series_title: "実務家がMIに期待すること"
+series_order: 6
+description: "MIシリーズ最終回。実務での活用戦略を総括。"
 ---
 
 ---
