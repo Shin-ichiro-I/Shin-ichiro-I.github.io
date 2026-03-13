@@ -49,8 +49,8 @@ title: 放課後のサイエンス
 			</div>
 
 			<!-- シリーズ記事 -->
-			{% assign series_list = "mi-kg-fusion,mi-expectations,kg-practice" | split: "," %}
-			{% assign series_titles = "MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた" | split: "," %}
+			{% assign series_list = "mi-kg-fusion,mi-expectations,kg-practice,LLM-kg-fusion" | split: "," %}
+			{% assign series_titles = "MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた,LLM×KG融合が拓く新時代" | split: "," %}
 
 			{% for series_id in series_list %}
 			{% assign series_posts = site.posts | where: "series", series_id | sort: "series_order" %}
