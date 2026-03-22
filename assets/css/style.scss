@@ -101,14 +101,18 @@ hr {
 }
 
 // =============================================================================
-// Media Elements (images, tables, code blocks)
+// Media Elements (images, tables, code blocks, mermaid)
 // =============================================================================
-pre, .highlight, img, table {
+pre, .highlight, img, table, .mermaid {
   max-width: 100%;
   width: 80%;
   box-sizing: border-box;
   display: block;
   margin: 1.5rem auto;
+}
+
+.mermaid {
+  text-align: center;
 }
 
 // インラインコード
