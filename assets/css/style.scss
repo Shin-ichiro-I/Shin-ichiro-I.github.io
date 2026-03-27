@@ -148,52 +148,52 @@ pre code {
 }
 
 // =============================================================================
-// Syntax Highlighting (Custom Dark Theme with readable JSON)
+// Syntax Highlighting (All White Text for JSON/Code Blocks)
 // =============================================================================
-pre.highlight .o { color: #f8f8f2; } // Colon and brackets white
-pre.highlight .ow { color: #f92672; }
-pre.highlight .k { color: #66d9ef; }
-pre.highlight .nf { color: #a6e22e; } // function name
-pre.highlight .nt { color: #f92672; }
+pre.highlight .o { color: #f8f8f2; }
+pre.highlight .ow { color: #f8f8f2; }
+pre.highlight .k { color: #f8f8f2; }
+pre.highlight .nf { color: #f8f8f2; }
+pre.highlight .nt { color: #f8f8f2; }
 pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; }
 
 .highlight {
   .hll { background-color: #49483e }
   .c { color: #a0a0a0; font-style: italic }
-  .err { color: #f92672; background-color: #1e0010 }
-  .k { color: #66d9ef; font-weight: bold }
-  .o { color: #f8f8f2; font-weight: bold } // Colon and operators white
+  .err { color: #f8f8f2; background-color: #1e0010 }
+  .k { color: #f8f8f2; font-weight: bold }
+  .o { color: #f8f8f2; font-weight: bold }
   .cm { color: #a0a0a0; font-style: italic }
   .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
   .c1 { color: #a0a0a0; font-style: italic }
   .cs { color: #a0a0a0; font-weight: bold; font-style: italic }
-  .gd { color: #f92672; background-color: #1e0010 }
+  .gd { color: #f8f8f2; background-color: #1e0010 }
   .ge { color: #f8f8f2; font-style: italic }
-  .gr { color: #f92672 }
+  .gr { color: #f8f8f2 }
   .gh { color: #f8f8f2; font-weight: bold }
-  .gi { color: #a6e22e; background-color: #1e0010 }
+  .gi { color: #f8f8f2; background-color: #1e0010 }
   .go { color: #d0d0d0 }
   .gp { color: #d0d0d0; font-weight: bold }
   .gs { font-weight: bold; color: #f8f8f2; }
   .gu { color: #d0d0d0 }
-  .gt { color: #f92672 }
-  .kc, .kd, .kp, .kr, .kt { color: #66d9ef; font-weight: bold }
-  .kn { color: #f92672; font-weight: bold }
-  .m, .mf, .mh, .mi, .mo, .il { color: #ae81ff } // Numbers (purple)
-  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #e6db74 } // Strings (yellow)
-  .na { color: #a6e22e }
+  .gt { color: #f8f8f2 }
+  .kc, .kd, .kp, .kr, .kt { color: #f8f8f2; font-weight: bold }
+  .kn { color: #f8f8f2; font-weight: bold }
+  .m, .mf, .mh, .mi, .mo, .il { color: #f8f8f2 }
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #f8f8f2 }
+  .na { color: #f8f8f2 }
   
   // JSON keys handling
-  .nl { color: #66d9ef; font-weight: normal } // JSON Keys (light blue)
-  .w { color: #f8f8f2 } // Whitespaces
-  .p { color: #f8f8f2 } // Punctuation (brackets, colons, commas) white
+  .nl { color: #f8f8f2; font-weight: normal }
+  .w { color: #f8f8f2 }
+  .p { color: #f8f8f2 }
   
   .nb, .ni, .nn, .nv, .bp, .vc, .vg, .vi { color: #f8f8f2 }
-  .nc, .nd, .nf { color: #a6e22e; font-weight: bold }
-  .no, .ne, .nt { color: #f92672 }
+  .nc, .nd, .nf { color: #f8f8f2; font-weight: bold }
+  .no, .ne, .nt { color: #f8f8f2 }
   .ne { font-weight: bold }
-  .sr { color: #a6e22e }
-  .ss { color: #ae81ff }
+  .sr { color: #f8f8f2 }
+  .ss { color: #f8f8f2 }
 }
 
 // =============================================================================
