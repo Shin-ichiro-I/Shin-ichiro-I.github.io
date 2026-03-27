@@ -150,10 +150,10 @@ pre code {
 // =============================================================================
 // Syntax Highlighting (Custom Dark Theme with readable JSON)
 // =============================================================================
-pre.highlight .o { color: #f92672; }
+pre.highlight .o { color: #f8f8f2; } // Colon and brackets white
 pre.highlight .ow { color: #f92672; }
 pre.highlight .k { color: #66d9ef; }
-pre.highlight .nf { color: #FFB86C; }
+pre.highlight .nf { color: #a6e22e; } // function name
 pre.highlight .nt { color: #f92672; }
 pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; }
 
@@ -162,7 +162,7 @@ pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { colo
   .c { color: #a0a0a0; font-style: italic }
   .err { color: #f92672; background-color: #1e0010 }
   .k { color: #66d9ef; font-weight: bold }
-  .o { color: #f92672; font-weight: bold }
+  .o { color: #f8f8f2; font-weight: bold } // Colon and operators white
   .cm { color: #a0a0a0; font-style: italic }
   .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
   .c1 { color: #a0a0a0; font-style: italic }
@@ -182,9 +182,13 @@ pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { colo
   .m, .mf, .mh, .mi, .mo, .il { color: #ae81ff } // Numbers (purple)
   .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #e6db74 } // Strings (yellow)
   .na { color: #a6e22e }
-  // JSON key highlighting (was red, changed to light green/blue for readability)
-  .nl { color: #a6e22e; font-weight: normal }
-  .nb, .ni, .nn, .nv, .bp, .vc, .vg, .vi, .w { color: #f8f8f2 }
+  
+  // JSON keys handling
+  .nl { color: #66d9ef; font-weight: normal } // JSON Keys (light blue)
+  .w { color: #f8f8f2 } // Whitespaces
+  .p { color: #f8f8f2 } // Punctuation (brackets, colons, commas) white
+  
+  .nb, .ni, .nn, .nv, .bp, .vc, .vg, .vi { color: #f8f8f2 }
   .nc, .nd, .nf { color: #a6e22e; font-weight: bold }
   .no, .ne, .nt { color: #f92672 }
   .ne { font-weight: bold }
