@@ -49,8 +49,9 @@ title: 放課後のサイエンス
 			</div>
 
 			<!-- シリーズ記事 -->
-			{% assign series_list = "mi-kg-fusion,mi-expectations,kg-practice" | split: "," %}
-			{% assign series_titles = "MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた" | split: "," %}
+			{% assign series_list = "LLM-kg-fusion,mi-kg-fusion,mi-expectations,kg-practice" | split: "," %}
+			{% assign series_titles = "LLM×KG融合が拓く新時代,MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた" | split: "," %}
+			{% assign series_new_flags = "1,0,0,0" | split: "," %}
 
 			{% for series_id in series_list %}
 			{% assign series_posts = site.posts | where: "series", series_id | sort: "series_order" %}
@@ -59,6 +60,7 @@ title: 放課後のサイエンス
 			<section class="series-section" data-category="{{ first_post.category }}">
 				<div class="series-header">
 					<span class="series-badge">シリーズ</span>
+					{% if series_new_flags[forloop.index0] == "1" %}<span class="new-badge">NEW</span>{% endif %}
 					<h2 class="series-title">{{ series_titles[forloop.index0] }}</h2>
 					<span class="series-count">{{ series_posts.size }}記事</span>
 				</div>

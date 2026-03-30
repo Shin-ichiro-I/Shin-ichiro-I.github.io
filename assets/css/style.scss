@@ -101,14 +101,18 @@ hr {
 }
 
 // =============================================================================
-// Media Elements (images, tables, code blocks)
+// Media Elements (images, tables, code blocks, mermaid)
 // =============================================================================
-pre, .highlight, img, table {
+pre, .highlight, img, table, .mermaid {
   max-width: 100%;
-  width: 80%;
+  width: 100%; // Changed from 80% to 100% to utilize more space
   box-sizing: border-box;
   display: block;
   margin: 1.5rem auto;
+}
+
+.mermaid {
+  text-align: center;
 }
 
 // インラインコード
@@ -144,46 +148,52 @@ pre code {
 }
 
 // =============================================================================
-// Syntax Highlighting (Monokai Dark Theme)
+// Syntax Highlighting (All White Text for JSON/Code Blocks)
 // =============================================================================
-pre.highlight .o { color: #f92672; }
-pre.highlight .ow { color: #f92672; }
-pre.highlight .k { color: #66d9ef; }
-pre.highlight .nf { color: #FFB86C; }
-pre.highlight .nt { color: #f92672; }
+pre.highlight .o { color: #f8f8f2; }
+pre.highlight .ow { color: #f8f8f2; }
+pre.highlight .k { color: #f8f8f2; }
+pre.highlight .nf { color: #f8f8f2; }
+pre.highlight .nt { color: #f8f8f2; }
 pre.highlight .c, pre.highlight .cm, pre.highlight .c1, pre.highlight .cs { color: #a0a0a0; }
 
 .highlight {
   .hll { background-color: #49483e }
   .c { color: #a0a0a0; font-style: italic }
-  .err { color: #f92672; background-color: #1e0010 }
-  .k { color: #66d9ef; font-weight: bold }
-  .o { color: #f92672; font-weight: bold }
+  .err { color: #f8f8f2; background-color: #1e0010 }
+  .k { color: #f8f8f2; font-weight: bold }
+  .o { color: #f8f8f2; font-weight: bold }
   .cm { color: #a0a0a0; font-style: italic }
   .cp { color: #a0a0a0; font-weight: bold; font-style: italic }
   .c1 { color: #a0a0a0; font-style: italic }
   .cs { color: #a0a0a0; font-weight: bold; font-style: italic }
-  .gd { color: #f92672; background-color: #1e0010 }
+  .gd { color: #f8f8f2; background-color: #1e0010 }
   .ge { color: #f8f8f2; font-style: italic }
-  .gr { color: #f92672 }
+  .gr { color: #f8f8f2 }
   .gh { color: #f8f8f2; font-weight: bold }
-  .gi { color: #a6e22e; background-color: #1e0010 }
+  .gi { color: #f8f8f2; background-color: #1e0010 }
   .go { color: #d0d0d0 }
   .gp { color: #d0d0d0; font-weight: bold }
   .gs { font-weight: bold; color: #f8f8f2; }
   .gu { color: #d0d0d0 }
-  .gt { color: #f92672 }
-  .kc, .kd, .kp, .kr, .kt { color: #66d9ef; font-weight: bold }
-  .kn { color: #f92672; font-weight: bold }
-  .m, .mf, .mh, .mi, .mo, .il { color: #ae81ff }
-  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #e6db74 }
-  .na { color: #a6e22e }
-  .nb, .ni, .nl, .nn, .nv, .bp, .vc, .vg, .vi, .w { color: #f8f8f2 }
-  .nc, .nd, .nf { color: #a6e22e; font-weight: bold }
-  .no, .ne, .nt { color: #f92672 }
+  .gt { color: #f8f8f2 }
+  .kc, .kd, .kp, .kr, .kt { color: #f8f8f2; font-weight: bold }
+  .kn { color: #f8f8f2; font-weight: bold }
+  .m, .mf, .mh, .mi, .mo, .il { color: #f8f8f2 }
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #f8f8f2 }
+  .na { color: #f8f8f2 }
+  
+  // JSON keys handling
+  .nl { color: #f8f8f2; font-weight: normal }
+  .w { color: #f8f8f2 }
+  .p { color: #f8f8f2 }
+  
+  .nb, .ni, .nn, .nv, .bp, .vc, .vg, .vi { color: #f8f8f2 }
+  .nc, .nd, .nf { color: #f8f8f2; font-weight: bold }
+  .no, .ne, .nt { color: #f8f8f2 }
   .ne { font-weight: bold }
-  .sr { color: #a6e22e }
-  .ss { color: #ae81ff }
+  .sr { color: #f8f8f2 }
+  .ss { color: #f8f8f2 }
 }
 
 // =============================================================================
@@ -649,6 +659,30 @@ article.post {
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.series-header .new-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff !important;
+  background: #e53935;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  -webkit-animation: new-badge-pulse 2s ease-in-out infinite;
+  animation: new-badge-pulse 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes new-badge-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.65; }
+}
+
+@keyframes new-badge-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.65; }
 }
 
 .series-title {
