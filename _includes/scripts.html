@@ -4,24 +4,4 @@
 <script src="{{ '/assets/js/dropcap.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/responsive-nav.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-
-<!-- Mermaid.js for rendering markdown mermaid blocks -->
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'default' });
-  
-  document.addEventListener('DOMContentLoaded', function () {
-    // Jekyllが生成する <pre class="language-mermaid"> などを探索
-    document.querySelectorAll('pre.language-mermaid, .language-mermaid pre, pre > code.language-mermaid').forEach(function (element) {
-      // 実際のコードテキストを取得
-      const code = element.textContent;
-      const container = document.createElement('div');
-      container.className = 'mermaid';
-      container.textContent = code;
-      
-      // 元の pre 要素を新しい div に差し替える
-      const target = element.tagName === 'CODE' ? element.parentElement : element;
-      target.parentElement.replaceChild(container, target);
-    });
-  });
-</script>
+<script src="{{ '/assets/js/featherlight.min.js' | relative_url }}"></script>
