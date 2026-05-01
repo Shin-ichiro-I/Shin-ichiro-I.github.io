@@ -26,14 +26,11 @@ tr {
 
 th, td {
 	text-align: left;
-	padding: .5em;
-	word-break: break-all;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	font-size: clamp(0.7em, 1vw, 1em);
-	max-width: 120px;
-	position: relative;
+	padding: .75em .5em;
+	word-break: normal;
+	overflow-wrap: break-word;
+	font-size: clamp(0.8em, 1vw, 1em);
+	line-height: 1.4;
 }
 
 th {
@@ -46,8 +43,5 @@ th {
 }
 
 th:hover, td:hover {
-	white-space: normal;
-	overflow: visible;
 	background: #a0a0a0;
-	z-index: 10;
 }

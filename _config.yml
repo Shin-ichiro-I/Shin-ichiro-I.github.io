@@ -20,6 +20,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+timezone: Asia/Tokyo
 paginate: 5
 
 navigation:
