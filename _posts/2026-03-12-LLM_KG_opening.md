@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "プロローグ ── 素材革命の停滞と「知識の死蔵」"
-date: 2026-03-xx
-category: LLM-KG
+date: 2026-03-12
+category: materials-informatics
 tags: [Materials Informatics, Knowledge Graph, LLM, 材料開発]
 series: LLM-kg-fusion
 series_title: "最新LLMと知識グラフによるMI実装検証プロジェクト"
