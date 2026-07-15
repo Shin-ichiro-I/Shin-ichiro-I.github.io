@@ -49,9 +49,9 @@ title: 放課後のサイエンス
 			</div>
 
 			<!-- シリーズ記事 -->
-			{% assign series_list = "LLM-kg-fusion,mi-kg-fusion,mi-expectations,kg-practice" | split: "," %}
-			{% assign series_titles = "LLM×KG融合が拓く新時代,MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた" | split: "," %}
-			{% assign series_new_flags = "1,0,0,0" | split: "," %}
+			{% assign series_list = "ARIA-FORGE,LLM-kg-fusion,mi-kg-fusion,mi-expectations,kg-practice" | split: "," %}
+			{% assign series_titles = "真の自律型推論AIエージェントへの飛躍,LLM×KG融合が拓く新時代,MI×KG融合が拓く新時代,実務家がMIに期待すること,化学分野のKG作ってみた" | split: "," %}
+			{% assign series_new_flags = "1,0,0,0,0" | split: "," %}
 
 			{% for series_id in series_list %}
 			{% assign series_posts = site.posts | where: "series", series_id | sort: "series_order" %}
